@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Confirmation</title>
+</head>
+<body>
+<h1 style="color: blue;">Welcome to Profy!</h1>
+<p>Dear <span th:text="${name}">User</span>,</p>
+<p>Thank you for signing up. Please confirm your email by clicking the link below:</p>
+<a th:href="${confirmUrl}">Confirm Email</a>
+<p>If you did not sign up, please ignore this email.</p>
+</body>
+</html>

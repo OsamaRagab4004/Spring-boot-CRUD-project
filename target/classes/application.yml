@@ -1,0 +1,51 @@
+spring:
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: okramer82@gmail.com
+    password: dwyl sxsl mblq ouqc
+    properties:
+      mail.smtp:
+        auth: true
+        starttls.enable: true
+        starttls.required: true
+        connection-timeout: 5000
+        timeout: 5000
+        write-timeout: 5000
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jwt_security
+    username: username
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days
+
+api:
+  stripe:
+    key: sk_test_51Q4RfIKj7i5hvlYDxed5QqqZtQwFFgGy8pzwd4oyJU35B1H7GiceqzK8vh9IvtcGerDC2uK9yiFawkIvBtKvrF8r00JhszZRdi
+
+
+openai:
+  api:
+    key: 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
+
+gemini:
+  api:
+    key: AIzaSyB_p_hDsUPeU1_hz5_tDF2MYrfPfk-p0Cc
