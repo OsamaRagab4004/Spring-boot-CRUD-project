@@ -16,3 +16,4 @@ This project demonstrates the implementation of security using Spring Boot 3.0 a
 * BCrypt
 * Maven
  
+![Screenshot 2025-05-20 155517](https://github.com/user-attachments/assets/bf4d00cc-dc1b-4f20-824d-d280fd7903c5)
