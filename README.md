@@ -44,40 +44,76 @@ You can view the full database structure in the attached image, which illustrate
 
 
 
-Database Setup
-Install and start PostgreSQL.
-Create a database named jwt_security:
-CREATE DATABASE jwt_security;
-Update the database username and password in src/main/resources/application.yml:
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/jwt_security
-    username: your_db_username
-    password: your_db_password
-Running the Application
-Build the project using Maven:
-mvn clean install
-Run the application:
-mvn spring-boot:run
-The application will start on http://localhost:8080.  
-API Documentation
-Swagger UI is available at:
-http://localhost:8080/swagger-ui.html
+### 🛠️ Database Setup
 
-Environment Variables
-For sensitive information like API keys, you can use environment variables instead of hardcoding them in application.yml. Update the application.yml file to reference environment variables:
+1. **Install and start PostgreSQL**  
+   Make sure PostgreSQL is installed and running on your system.
 
+2. **Create the database**  
+   ```sql
+   CREATE DATABASE jwt_security;
+   ```
+
+3. **Configure database credentials**  
+   Open the configuration file at `src/main/resources/application.yml` and update it as follows:
+
+   ```yaml
+   spring:
+     datasource:
+       url: jdbc:postgresql://localhost:5432/jwt_security
+       username: your_db_username
+       password: your_db_password
+   ```
+
+---
+
+### 🚀 Running the Application
+
+1. **Build the project using Maven**  
+   ```bash
+   mvn clean install
+   ```
+
+2. **Run the application**  
+   ```bash
+   mvn spring-boot:run
+   ```
+
+3. **Access the application**  
+   Open your browser and go to:  
+   [http://localhost:8080](http://localhost:8080)
+
+---
+
+### 📄 API Documentation
+
+Swagger UI is available at:  
+[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+---
+
+### 🔐 Environment Variables
+
+For sensitive information like API keys or email credentials, use environment variables instead of hardcoding them.
+
+Update your `application.yml`:
+
+```yaml
 spring:
   mail:
     username: ${MAIL_USERNAME}
     password: ${MAIL_PASSWORD}
+```
 
+Then set the environment variables in your terminal:
 
-
-Set the environment variables in your system:
-
+```bash
 export MAIL_USERNAME=your_email
 export MAIL_PASSWORD=your_password
+```
+
+> 💡 Tip: Add the above `export` lines to your shell config file (`~/.bashrc`, `~/.zshrc`, etc.) to persist them.
+
 
 
 
